@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+	<head>
+		<title>Rejestracja</title>
+	</head>
+
+<body>
+	<h1 th:text="Rejestracja">form</h1>
+	<form th:action="@{/register}" th:object="${userDTO}" method="POST" enctype="UTF-8">
+	<div>
+        <label>Username                  </label>
+        <input type="text" class="form-control" name="username" th:value="*{username}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" ></div>
+    </div>
+    <div>
+        <label>Email                  </label>
+        <input type="text" class="form-control" name="email" th:value="*{email}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></div>
+    </div>
+    <div>
+        <label>Hasło                  </label>
+        <input type="password" class="form-control" name="password" th:value="*{password}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" ></div>
+    </div>
+    <div>
+        <label>Wprowadź ponownie hasło</label>
+        <input type="password" class="form-control" name="rpassword" th:value="*{rpassword}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('rpassword')}" th:errors="*{rpassword}" ></div>
+    </div>
+    <button type="submit" th:text="Dalej">submit</button>
+</form>
+    
+		
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Strona główna</title>
+	</head>
+
+	<body>
+		<h1>Strona główna</h1>
+		
+		<div sec:authorize="isAnonymous()">
+		<a href="/login">Zaloguj się</a>
+		
+		<br>
+		<p>Nie masz konta? <a href="/register">Zarejestruj się</a></p>
+		<br>
+		</div>
+		<div sec:authorize="isAuthenticated()">
+			<a href="/logout">Wyloguj się</a>
+		</div>
+		<br><br>
+		<div sec:authorize="hasAuthority('MANAGER')">
+  			<a href="">Przejdź na podstronę CRUD</a>
+		</div>
+	</body>
+
+</html>

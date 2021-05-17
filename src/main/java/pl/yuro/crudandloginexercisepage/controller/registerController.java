@@ -105,7 +105,6 @@ public class registerController {
 					model.addAttribute("message", "Twoja możliwość weryfikacji wygasła");
 				}else {
 					//Token
-					user.setEnabled(1);
 					Set<Role> roles = new HashSet<Role>();
 					Role role = roleRepository.getRoleByRoleName("EMPLOYEE");
 					roles.add(role);

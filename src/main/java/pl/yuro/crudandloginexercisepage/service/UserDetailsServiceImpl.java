@@ -90,7 +90,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		roles.add(role);
 		
 		user.setRoles(roles);
-		user.setEnabled(0);
+		user.setEnabled(1);
     	
 		Optional<User> saved = Optional.of(save(user));
 		

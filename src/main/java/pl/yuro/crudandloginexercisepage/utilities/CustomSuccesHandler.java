@@ -26,13 +26,13 @@ public class CustomSuccesHandler implements AuthenticationSuccessHandler {
 
 			if (grantedAuthority.getAuthority().equals("UNVERIFIED")) {
 				redirectUrl = "/unverified";
-			} else { redirectUrl = "/homepage"; }
-
-		if (redirectUrl == null) {
-			throw new IllegalStateException();
+			} else { 
+				redirectUrl = "/homepage";
+				}
 		}
+
 		new DefaultRedirectStrategy().sendRedirect(request, response, redirectUrl);
 
-	}
+	
 	}
 }

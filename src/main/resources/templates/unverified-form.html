@@ -3,7 +3,13 @@
 
 <body>
 
-	<p>ZWERYFIKUJ KONTO!!!!!!</p>
+	<div sec:authorize="hasAuthority('UNVERIFIED')">
+		<p>ZWERYFIKUJ KONTO!!!!!!</p>
+	</div>
+	
+	
+	
+	<a href="/homepage">Przjedź na stronę główną </a>
 
 </body>
 

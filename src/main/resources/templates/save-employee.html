@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+	<head>
+		<title>Dodawanie pracownika</title>
+	</head>
+
+<body>
+	<h1 th:text="Dodawanie">form</h1>
+	<form th:action="@{/crud/add}" th:object="${employeeDTO}" method="POST" enctype="UTF-8">
+	<div>
+        <label>Imie                  </label>
+        <input type="text" class="form-control" name="firstName" th:value="*{firstName}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" ></div>
+    </div>
+    <div>
+        <label>Nazwisko                  </label>
+        <input type="text" class="form-control" name="lastName" th:value="*{lastName}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" ></div>
+    </div>
+    <div>
+        <label>Email                  </label>
+        <input type="text" class="form-control" name="email" th:value="*{email}" th:errorClass="is-invalid"/>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></div>
+    </div>
+    <button type="submit" th:text="Dodaj">submit</button>
+</form>
+    
+		
+</body>

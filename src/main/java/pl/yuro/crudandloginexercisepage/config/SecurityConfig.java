@@ -62,6 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 			.antMatchers("/unverified").hasAuthority("UNVERIFIED")
+			.antMatchers("/crud/**").hasAnyAuthority("MANAGER","ADMIN")
 			.antMatchers("/homepage","/","/register","/emailconfirmation").permitAll()
 			.anyRequest().authenticated()
 			.and()

@@ -1,5 +1,6 @@
 package pl.yuro.crudandloginexercisepage.service;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -15,10 +16,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import pl.yuro.crudandloginexercisepage.dto.UserDTO;
 import pl.yuro.crudandloginexercisepage.entity.Role;
 import pl.yuro.crudandloginexercisepage.entity.User;
+import pl.yuro.crudandloginexercisepage.entity.VerificationToken;
 import pl.yuro.crudandloginexercisepage.repository.RoleRepository;
 import pl.yuro.crudandloginexercisepage.repository.UserRepository;
 import pl.yuro.crudandloginexercisepage.utilities.KeyGenerator;
@@ -119,6 +122,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
          
         return user; 
     }
+    
+
     
 
 }

@@ -98,7 +98,7 @@ public class registerController {
 		} else {
 			User user = verificationToken.getUser();
 			
-			if(!user.isEnabled()) {
+			if(user.isEnabled()) {
 				Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
 				
 				if(verificationToken.getExpireTime().before(currentTimestamp)) {
@@ -106,7 +106,7 @@ public class registerController {
 				}else {
 					//Token
 					Set<Role> roles = new HashSet<Role>();
-					Role role = roleRepository.getRoleByRoleName("EMPLOYEE");
+					Role role = roleRepository.getRoleByRoleName("VERIFIED");
 					roles.add(role);
 					user.setRoles(roles);
 					userDetailsServiceImpl.save(user);

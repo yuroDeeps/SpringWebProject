@@ -63,6 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/unverified").hasAuthority("UNVERIFIED")
 			.antMatchers("/crud/**").hasAnyAuthority("MANAGER","ADMIN")
+			.antMatchers("/currency/**").hasAnyAuthority("MANAGER","ADMIN")
 			.antMatchers("/homepage","/","/register","/emailconfirmation").permitAll()
 			.anyRequest().authenticated()
 			.and()

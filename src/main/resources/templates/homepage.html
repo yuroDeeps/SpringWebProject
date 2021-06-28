@@ -2,28 +2,31 @@
 <html>
 
 	<head>
-		<title>Strona główna</title>
+		<title>Home Page</title>
 	</head>
 
 	<body>
-		<h1>Strona główna</h1>
+		<h1>Home Page</h1>
 		
 		<div sec:authorize="isAnonymous()">
-		<a href="/login">Zaloguj się</a>
+		<a href="/login">Sign in</a>
 		
 		<br>
-		<p>Nie masz konta? <a href="/register">Zarejestruj się</a></p>
+		<p>Nie masz konta? <a href="/register">Sign up</a></p>
 		<br>
 		</div>
 		<div sec:authorize="isAuthenticated()">
-			<a href="/logout">Wyloguj się</a>
+			<a href="/logout">Log out</a>
 		</div>
 		<br><br>
 		<div sec:authorize="hasAuthority('MANAGER')">
-  			<a href="/crud/list">Przejdź na podstronę CRUD</a>
+  			<a href="/crud/list">CRUD list</a>
 		</div>
 		<div sec:authorize="hasAuthority('VERIFIED')">
-  			<a href="/currency/test">Ceny walut</a>
+  			<a href="/currency/test">Currency </a>
+		</div>
+		<div sec:authorize="isAnonymous()">
+  			<a href="/forgotPassword">I forgot my password</a>
 		</div>
 	</body>
 

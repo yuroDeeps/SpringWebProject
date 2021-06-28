@@ -17,7 +17,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 
+import pl.yuro.crudandloginexercisepage.controller.changePasswordController;
+import pl.yuro.crudandloginexercisepage.dto.PasswdChangeDTO;
 import pl.yuro.crudandloginexercisepage.dto.UserDTO;
 import pl.yuro.crudandloginexercisepage.entity.Role;
 import pl.yuro.crudandloginexercisepage.entity.User;
@@ -122,6 +126,27 @@ public class UserDetailsServiceImpl implements UserDetailsService {
          
         return user; 
     }
+
+	public BindingResult changePasswordSave(User user, PasswdChangeDTO userDTO, BindingResult bindingResult) {
+		if(userDTO.getPassword() ==null && userDTO.getRpassword()==null) {
+			bindingResult.addError(new FieldError("userDTO", "rpassword", "Hasła muszą zostać uzupełione!"));
+		}
+		
+		if(userDTO.getPassword() !=null && userDTO.getRpassword()!=null) {
+			System.out.println("Kontrolnie 2");
+			if(!(userDTO.comparePassAndRPass(userDTO.getPassword(), userDTO.getRpassword()))) {
+				System.out.println("Kontrolnie 3");
+				bindingResult.addError(new FieldError("userDTO", "rpassword", "Wpsiane hasła muszą być takie same!"));
+			}
+		}
+		
+		user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+		
+		save(user);
+		
+		return bindingResult;
+		
+	}
     
 
     

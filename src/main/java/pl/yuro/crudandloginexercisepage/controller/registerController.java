@@ -121,5 +121,6 @@ public class registerController {
 		
 		return "verification-form";
 	}
+
 	
 }

@@ -14,11 +14,16 @@ body {
   justify-content: center;
 }
 
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
 .container {
   width: 600px;
   height: 700px;
   /* margin: auto; */
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
 
   display: flex;
@@ -29,15 +34,15 @@ body {
 }
 
 .register {
-  margin-top: 100px;
+  margin-top: 120px;
 
   /* GRID */
   display: grid;
   grid-template-columns: repeat(2, 250px);
   grid-template-rows: repeat(4, 70px);
 
-  gap: 20px;
-  column-gap: 40px;
+  gap: 30px;
+  column-gap: 50px;
 }
 
 .register-label {
@@ -61,7 +66,16 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
 
-  border-radius: 25px;
+  border-radius: 20px;
+}
+
+.submit-button:hover {
+  background-color: rgb(169, 47, 218);
+}
+
+.submit-button:active {
+  font-style: italic;
+  background-color: rgb(124, 16, 173);
 }
 
 .register-element {
@@ -72,4 +86,15 @@ body {
 label {
   display: block;
   position: relative;
+
+  font-size: larger;
+}
+
+input {
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: none;
+
+  margin-top: 7px;
+  font-size: large;
 }

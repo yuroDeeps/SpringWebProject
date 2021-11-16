@@ -7,7 +7,7 @@
 body {
   font-family: "Inter", sans-serif;
   position: relative;
-  background: linear-gradient(to right, rgb(101, 21, 155), rgb(206, 147, 157));
+  background-color: rgb(101, 21, 155);
   padding: 40px;
   display: flex;
   align-items: center;
@@ -49,6 +49,9 @@ h1 {
   grid-column: 1/3;
   justify-self: center;
   align-self: center;
+
+  color: rgb(101, 21, 155);
+  font-weight: bold;
 }
 
 .submit-button {

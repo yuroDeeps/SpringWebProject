@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="cssFiles/hpStyle.css" />
+    <title>Home Page</title>
+  </head>
 
-	<head>
-		<title>Home Page</title>
-	</head>
+  <body>
+    <h1>Home Page</h1>
 
-	<body>
-		<h1>Home Page</h1>
-		
-		<div sec:authorize="isAnonymous()">
-		<a href="/login">Sign in</a>
-		
-		<br>
-		<p>Nie masz konta? <a href="/register">Sign up</a></p>
-		<br>
-		</div>
-		<div sec:authorize="isAuthenticated()">
-			<a href="/logout">Log out</a>
-		</div>
-		<br><br>
-		<div sec:authorize="hasAuthority('MANAGER')">
-  			<a href="/crud/list">CRUD list</a>
-		</div>
-		<div sec:authorize="hasAuthority('VERIFIED')">
-  			<a href="/currency/test">Currency </a>
-		</div>
-		<div sec:authorize="isAnonymous()">
-  			<a href="/forgotPassword">I forgot my password</a>
-		</div>
-	</body>
+    <div sec:authorize="isAnonymous()">
+      <a href="/login">Sign in</a>
 
+      <br />
+      <p>You don't have an account? <a href="/register">Sign up</a></p>
+      <br />
+    </div>
+    <div sec:authorize="isAuthenticated()">
+      <a href="/logout">Log out</a>
+    </div>
+    <br /><br />
+    <div sec:authorize="hasAuthority('MANAGER')">
+      <a href="/crud/list">CRUD list</a>
+    </div>
+    <div sec:authorize="hasAuthority('VERIFIED')">
+      <a href="/currency/test">Currency </a>
+    </div>
+  </body>
 </html>

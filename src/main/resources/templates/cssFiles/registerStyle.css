@@ -101,3 +101,20 @@ input {
   margin-top: 7px;
   font-size: large;
 }
+
+.already {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+a,
+a:active {
+  text-decoration: none;
+  color: rgb(177, 27, 247);
+  font-weight: 700;
+}
+
+a:hover {
+  font-style: italic;
+  text-decoration: rgb(177, 27, 247) underline;
+}

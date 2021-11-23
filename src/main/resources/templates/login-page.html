@@ -11,35 +11,38 @@
   </head>
 
   <body>
-    <div class="">
-      <form th:action="@{/login}" method="post">
-        <div th:if="${param.error}">
-          <p class="">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+    <div class="container">
+      <form th:action="@{/login}" method="post" class="login">
+        <div class="header">
+          <div th:if="${param.error}" class="error-login">
+            <p class="">
+              [[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]
+            </p>
+          </div>
+
+          <h2>Sign in to Yuro App</h2>
+
+          <div th:if="${param.logout}" class="logout">
+            <p class="text-warning">You have been logged out.</p>
+          </div>
         </div>
 
-        <div th:if="${param.logout}">
-          <p class="text-warning">You have been logged out.</p>
-        </div>
-
-        <div class="">
-          <p>Sign in to Yuro App</p>
-          <input
-            type="username"
-            name="username"
-            class="form-control"
-            placeholder="Username"
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            placeholder="Password"
-            required
-          />
+        <input
+          type="username"
+          name="username"
+          class="form-control"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
+        <div class="bottom">
           <input type="submit" value="Login" class="btn btn-primary" />
-        </div>
-        <div sec:authorize="isAnonymous()">
           <a href="/forgotPassword">I forgot my password</a>
         </div>
       </form>

@@ -14,30 +14,26 @@
     <div class="container">
       <form th:action="@{/login}" method="post" class="login">
         <div class="header">
+          <h2>Sign in to Yuro App</h2>
+
           <div th:if="${param.error}" class="error-login">
             <p class="">
               [[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]
             </p>
-          </div>
-
-          <h2>Sign in to Yuro App</h2>
-
-          <div th:if="${param.logout}" class="logout">
-            <p class="text-warning">You have been logged out.</p>
           </div>
         </div>
 
         <input
           type="username"
           name="username"
-          class="form-control"
+          class="form-control login-input"
           placeholder="Username"
           required
         />
         <input
           type="password"
           name="password"
-          class="form-control"
+          class="form-control login-input"
           placeholder="Password"
           required
         />

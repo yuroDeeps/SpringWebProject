@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  /* Flex */
+  display: flex;
+  justify-content: center;
+
+  /* Body style */
+  background-color: rgb(101, 21, 155);
+  padding: 150px;
+}
+
+article {
+  width: 600px;
+  height: 350px;
+  background-color: rgb(245, 245, 245);
+  border: 5px solid black;
+  border-radius: 20px;
+
+  /* Grid */
+  display: grid;
+  grid-template-columns: 500px;
+  grid-template-rows: repeat(3, 40px);
+  justify-content: center;
+  align-content: center;
+}

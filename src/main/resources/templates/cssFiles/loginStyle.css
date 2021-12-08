@@ -18,14 +18,14 @@ body {
   width: 600px;
   height: 700px;
   /* margin: auto; */
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(241, 241, 241);
   border-radius: 20px;
 
   display: flex;
   align-items: flex-start;
   justify-content: center;
 
-  border: 5px solid black;
+  box-shadow: -10px -10px 20px rgb(163, 73, 175), 10px 10px 20px;
 }
 
 .login {
@@ -77,6 +77,8 @@ h2 {
   width: 350px;
   justify-self: center;
   align-self: center;
+
+  background-color: rgb(241, 241, 241);
 }
 
 .password {

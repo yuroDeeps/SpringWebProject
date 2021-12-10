@@ -19,13 +19,35 @@ article {
   width: 600px;
   height: 350px;
   background-color: rgb(245, 245, 245);
-  border: 5px solid black;
+  box-shadow: -10px -10px 20px rgb(163, 73, 175), 10px 10px 20px;
   border-radius: 20px;
 
   /* Grid */
   display: grid;
   grid-template-columns: 500px;
-  grid-template-rows: repeat(3, 40px);
+  grid-template-rows: repeat(2, 50px);
   justify-content: center;
   align-content: center;
+
+  gap: 30px;
+}
+
+h1 {
+  justify-self: center;
+  align-self: center;
+
+  font-size: 40px;
+  padding-bottom: 10px;
+
+  width: 500px;
+  text-align: center;
+  border-bottom: gray solid 2px;
+}
+
+p {
+  text-align: center;
+  font-size: 20px;
+
+  justify-self: center;
+  align-self: center;
 }

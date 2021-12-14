@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-	<head>
-		<title>Modyfikowanie pracownika</title>
-	</head>
-<body>
+  <head>
+    <title>Update employee</title>
+    <link rel="stylesheet" href="cssFiles/update.css" />
+  </head>
 
-<form action="#" 
-  th:action="@{/crud/update/{id}(id=${employee.id})}" 
-  th:object="${employee}" 
-  method="post">
-  
-  
-    <label for="firstName">Imie</label>
-    <input type="text" th:field="*{firstName}" id="employee.firstName" placeholder="Imie">
+  <body>
+    <form
+      action="#"
+      th:action="@{/crud/update/{id}(id=${employee.id})}"
+      th:object="${employee}"
+      method="post"
+      class="container"
+    >
+      <h1 class="header">UPDATE EMPLOYEE</h1>
 
-    <label for="lastName">Nazwisko</label>
-    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Nazwisko">
-    
-    <label for="email">Email</label>
-    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+      <input
+        type="text"
+        th:field="*{firstName}"
+        id="employee.firstName"
+        placeholder="First Name"
+      />
 
-    
+      <input
+        type="text"
+        th:field="*{lastName}"
+        id="lastName"
+        placeholder="Last Name"
+      />
 
-    <input type="submit" value="Update User">   
-</form>
+      <input type="text" th:field="*{email}" id="email" placeholder="Email" />
 
-</body>
+      <button type="submit" th:text="Dalej" class="btn">Update</button>
+    </form>
+  </body>
+</html>

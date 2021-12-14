@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <title>New employee</title>
+    <link rel="stylesheet" href="cssFiles/saveEmpStylesheet.css" />
+  </head>
 
-	<head>
-		<title>Dodawanie pracownika</title>
-	</head>
-
-<body>
-	<h1 th:text="Dodawanie">form</h1>
-	<form th:action="@{/crud/add}" th:object="${employeeDTO}" method="POST" enctype="UTF-8">
-	<div>
-        <label>Imie                  </label>
-        <input type="text" class="form-control" name="firstName" th:value="*{firstName}" th:errorClass="is-invalid"/>
-        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" ></div>
+  <body>
+    <div class="container">
+      <h1 th:text="Dodawanie">ADD NEW EMPLOYEE</h1>
+      <form
+        th:action="@{/crud/add}"
+        th:object="${employeeDTO}"
+        method="POST"
+        enctype="UTF-8"
+      >
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            name="firstName"
+            placeholder="First Name"
+            th:value="*{firstName}"
+            th:errorClass="is-invalid"
+          />
+          <div
+            th:if="${#fields.hasErrors('firstName')}"
+            th:errors="*{firstName}"
+          ></div>
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            name="lastName"
+            placeholder="Last Name"
+            th:value="*{lastName}"
+            th:errorClass="is-invalid"
+          />
+          <div
+            th:if="${#fields.hasErrors('lastName')}"
+            th:errors="*{lastName}"
+          ></div>
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+            th:value="*{email}"
+            th:errorClass="is-invalid"
+          />
+          <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+        <button type="submit" th:text="Dodaj" class="btn">Add</button>
+      </form>
     </div>
-    <div>
-        <label>Nazwisko                  </label>
-        <input type="text" class="form-control" name="lastName" th:value="*{lastName}" th:errorClass="is-invalid"/>
-        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" ></div>
-    </div>
-    <div>
-        <label>Email                  </label>
-        <input type="text" class="form-control" name="email" th:value="*{email}" th:errorClass="is-invalid"/>
-        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></div>
-    </div>
-    <button type="submit" th:text="Dodaj">submit</button>
-</form>
-    
-		
-</body>
+  </body>
+</html>

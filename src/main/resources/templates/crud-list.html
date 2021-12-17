@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-	<head>
-		<title>Lista pracowników</title>
-	</head>
-<body>
+  <head>
+    <title>Employees list</title>
+    <link rel="stylesheet" href="cssFiles/crudList.css" />
+    6
+  </head>
 
-<div th:switch="${employees}">
-    <h2 th:case="null">Brak pracowników!</h2>
-        <div th:case="*">
-            <h2>Pracownicy</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Imie</th>
-                        <th>Nazwisko</th>
-                        <th>Email</th>
-                        <th>Modyfikowanie</th>
-                        <th>Usuwanie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr th:each="employee : ${employees}">
-                    <td th:text="${employee.firstName}"></td>
-                    <td th:text="${employee.lastName}"></td>
-                    <td th:text="${employee.email}"></td>
-                    <td><a th:href="@{edit/{id}(id=${employee.id})}">Modyfikuj</a></td>
-                    <td><a th:href="@{delete/{id}(id=${employee.id})}">Usuń</a></td>
-                </tr>
-            </tbody>
+  <body>
+    <div th:switch="${employees}" class="container">
+      <h2>Pracownicy</h2>
+      <div th:case="*">
+        <table>
+          <thead>
+            <tr>
+              <th>Imie</th>
+              <th>Nazwisko</th>
+              <th>Email</th>
+              <th>Modyfikowanie</th>
+              <th>Usuwanie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="employee : ${employees}">
+              <td th:text="${employee.firstName}"></td>
+              <td th:text="${employee.lastName}"></td>
+              <td th:text="${employee.email}"></td>
+              <td>
+                <a th:href="@{edit/{id}(id=${employee.id})}">Modyfikuj</a>
+              </td>
+              <td><a th:href="@{delete/{id}(id=${employee.id})}">Usuń</a></td>
+            </tr>
+          </tbody>
         </table>
-    </div>      
-    <p><a href="/crud/add">Dodaj pracownika</a></p>
-</div>
-
-</body>
+        <a href="/crud/add">Dodaj pracownika</a>
+      </div>
+    </div>
+  </body>
+</html>

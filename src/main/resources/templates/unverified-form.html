@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Unverified</title>
+    <link rel="stylesheet" href="cssFiles/unverified.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <div sec:authorize="hasAuthority('UNVERIFIED')" class="verify">
+        <h1>Please verify account!</h1>
+      </div>
 
-	<div sec:authorize="hasAuthority('UNVERIFIED')">
-		<p>ZWERYFIKUJ KONTO!!!!!!</p>
-	</div>
-	
-	
-	
-	<a href="/homepage">Przjedź na stronę główną </a>
-
-</body>
-
+      <a href="/homepage">Przjedź na stronę główną </a>
+    </div>
+  </body>
 </html>

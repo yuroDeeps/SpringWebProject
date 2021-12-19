@@ -33,7 +33,36 @@ body {
   align-content: flex-start;
 }
 
+h2 {
+  justify-self: center;
+  align-self: center;
+
+  color: rgb(101, 21, 155);
+}
+
 table {
   margin-bottom: 50px;
   width: 100%;
+
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+thead {
+  background-color: rgb(212, 212, 212);
+}
+
+tbody {
+  text-align: center;
+}
+
+.btm-link {
+  text-decoration: none;
+  color: rgb(114, 114, 114);
+  margin-top: 4px;
+}
+
+.btm-link:hover {
+  font-style: italic;
 }
